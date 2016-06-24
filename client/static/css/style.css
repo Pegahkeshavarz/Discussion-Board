@@ -1,0 +1,23 @@
+.board{
+  padding-top:100px;
+}
+
+.error{
+  color:red;
+}
+
+.tab{
+  margin-top:70px;
+}
+
+.topic{
+  margin-top:100px;
+}
+
+.topic input{
+  margin-top:20px !important;
+}
+
+.post{
+  margin-top:40px;
+}

@@ -1,0 +1,51 @@
+
+<div ng-controller="userController">
+  <div class="container">
+     <h5>Welcome, {{username}}</h5>
+  </div>
+  <div class="row tab">
+    <div class="col-md-8 col-md-offset-2">
+      <table class="striped">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Topic</th>
+            <th>User Name</th>
+            <th>Posts</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="topic in topics">
+          <td>{{topic.category}}</td>
+          <td><a ng-click="showTopic(topic)">{{topic.topic}}</a></td>
+          <td><a href="">{{topic.username}}</a></td>
+          <td>{{topic.posts.length}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="row topic">
+    <div class="col-md-6">
+      <h6>Add a new Topic</h6>
+      <form name="topicForm">
+        <div class="input-field col s6">
+          <input id="first_name" type="text" class="validate" ng-model="new_topic.topic">
+          <label for="first_name">Topic</label>
+        </div>
+        <div class="input-field col s12">
+          <textarea id="textarea1" class="materialize-textarea" ng-model="new_topic.description"></textarea>
+          <label for="textarea1">Description</label>
+        </div>
+        <div class="input-field col s6">
+          <select class='browser-default' ng-model="new_topic.category">
+            <option value='' selected disabled>Choose Category</option>
+            <option ng-repeat='cate in categories' value='{{cate.name}}'>{{cate.name}}</option>
+         </select>
+         <a class="waves-effect waves-light btn" ng-click="addTopic()">Submit</a>
+       </div>
+      </form>
+    </div>
+  </div>
+</div>

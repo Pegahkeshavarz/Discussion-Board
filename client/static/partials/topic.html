@@ -1,0 +1,30 @@
+<div ng-controller="userController">
+  <div class="row">
+  <h5><a href="#">{{currentTopic.username}}</a> posted a topic</h5>
+    <div class="col-md-8 col-md-offset-2">
+      <p>
+        <strong>{{currentTopic.topic | uppercase}}</strong>
+      </p>
+      <p>
+        {{currentTopic.description}}
+      </p>
+
+    </div>
+  <h5>Post your answer here</h5>
+    <div class="container">
+      <div class="input-field col s12">
+        <textarea id="textarea1" class="materialize-textarea" ng-model="new_post.post"></textarea>
+        <label for="textarea1">your answer</label>
+        <a class="waves-effect waves-light btn" ng-click="post(currentTopic._id)">Post</a>
+        <hr>
+        <div ng-repeat="post in currentTopic.posts" class="post">
+        <p>
+          <a> {{post.username}} </a>: {{post.post}}
+        </p>
+        <textarea id="textarea1" class="materialize-textarea" ng-model="new_comment.comment"></textarea>
+        <a class="waves-effect waves-light btn-sm red" ng-click="comment(post._id)">Comment</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

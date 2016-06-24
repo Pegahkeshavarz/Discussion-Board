@@ -4,7 +4,7 @@ var fs = require('fs');
 
 var path = require('path');
 
-mongoose.connect('mongodb://localhost/store');
+mongoose.connect('mongodb://localhost/messageDashboard');
 
 var models_path = path.join(__dirname, './../models');
 
